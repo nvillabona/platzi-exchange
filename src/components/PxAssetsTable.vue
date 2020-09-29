@@ -32,12 +32,13 @@
           <b># {{ a.rank }}</b>
         </td>
         <td>
-          <router-link 
-          class="hover:underline tex-green-600"
-          :to="{name: 'coin-detail', params: {id: a.id}}">
-          {{ a.name }}
+          <router-link
+            class="hover:underline tex-green-600"
+            :to="{ name: 'coin-detail', params: { id: a.id } }"
+          >
+            {{ a.name }}
           </router-link>
-          <small class="ml-1 text-gray-500">{{a.symbol}}</small>
+          <small class="ml-1 text-gray-500">{{ a.symbol }}</small>
         </td>
         <td>{{ a.priceUsd | dollar }}</td>
         <td>{{ a.marketCapUsd | dollar }}</td>
@@ -61,12 +62,12 @@
 </template>
 
 <script>
-import PxButton from '@/components/PxButton';
+import PxButton from '@/components/PxButton'
 
 export default {
   name: 'PxAssetsTable',
 
-  components:{
+  components: {
     PxButton
   },
 
@@ -77,9 +78,9 @@ export default {
     }
   },
 
-  methods:{
-    goToCoin(id){
-      this.$router.push({name:'coin-detail', params: {id}})
+  methods: {
+    goToCoin(id) {
+      this.$router.push({ name: 'coin-detail', params: { id } })
     }
   }
 }
